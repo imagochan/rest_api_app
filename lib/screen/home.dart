@@ -3,7 +3,9 @@ import 'dart:convert';
 
 import 'package:flutter/material.dart';
 
-import 'package:http/http.dart' as http; //imported http package from pub.dev
+import 'package:http/http.dart' as http;
+
+import '../model/user.dart'; //imported http package from pub.dev
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -13,7 +15,7 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-  List<dynamic> users = [];
+  List<User> users = [];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
