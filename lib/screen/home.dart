@@ -26,8 +26,9 @@ class _HomeScreenState extends State<HomeScreen> {
           final user = users[index];
           final name = user['name']['first'];
           final email = user['email'];
+          final imageUrl = user['picture']['thumbnail'];
           return ListTile(
-            leading: CircleAvatar(child: Text('${index +1}')),
+            leading: Image.network(imageUrl),
             title: Text(name.toString()),
             subtitle: Text(email),
           );
