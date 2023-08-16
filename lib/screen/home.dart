@@ -24,10 +24,12 @@ class _HomeScreenState extends State<HomeScreen> {
         itemCount: users.length,//cantidad de usuarios en el fetch
         itemBuilder: (context, index){
           final user = users[index];
+          final name = user['name']['first'];
           final email = user['email'];
           return ListTile(
-            leading: Text('${index +1}'),
-            title: Text(email),
+            leading: CircleAvatar(child: Text('${index +1}')),
+            title: Text(name.toString()),
+            subtitle: Text(email),
           );
         }),
       floatingActionButton: FloatingActionButton(
