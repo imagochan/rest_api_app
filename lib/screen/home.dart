@@ -1,5 +1,5 @@
 import 'dart:convert';
-import 'dart:html';
+//import 'dart:html';
 
 import 'package:flutter/material.dart';
 
@@ -34,7 +34,7 @@ class _HomeScreenState extends State<HomeScreen> {
     final body = response.body;
     final json = jsonDecode(body);
     setState(() {
-      users = json["results"];
+      users = json['results'];
     });
     print('fetchUsers completed');
   }
