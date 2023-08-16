@@ -20,6 +20,15 @@ class _HomeScreenState extends State<HomeScreen> {
       appBar: AppBar(
         title: const Text('Rest API Call'),
       ),
+      body: ListView.builder(
+        itemCount: users.length,//cantidad de usuarios en el fetch
+        itemBuilder: (context, index){
+          final user = users[index];
+          final email = user['email'];
+          return ListTile(
+            title: Text(email),
+          );
+        }),
       floatingActionButton: FloatingActionButton(
         onPressed: fetchUsers, //void calls do not need parentheses ()
       ),
