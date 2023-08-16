@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'package:http/http.dart' as http; //imported http package from pub.dev
+
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
 
