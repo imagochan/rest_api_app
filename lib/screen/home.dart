@@ -15,7 +15,7 @@ class _HomeScreenState extends State<HomeScreen> {
         title: const Text('Rest API Call'),
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: fetchUsers(),
+        onPressed: fetchUsers, //void calls do not need parentheses ()
       ),
     );
   }
