@@ -19,4 +19,8 @@ class _HomeScreenState extends State<HomeScreen> {
       ),
     );
   }
+
+  void fetchUsers() {
+    print('fetchUsers called');
+  }
 }
