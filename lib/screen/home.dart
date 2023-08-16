@@ -26,6 +26,7 @@ class _HomeScreenState extends State<HomeScreen> {
           final user = users[index];
           final email = user['email'];
           return ListTile(
+            leading: Text('${index +1}'),
             title: Text(email),
           );
         }),
@@ -37,7 +38,7 @@ class _HomeScreenState extends State<HomeScreen> {
 
   void fetchUsers() async {
     print('fetchUsers called');
-    final url = 'https://randomuser.me/api/?results=10';
+    final url = 'https://randomuser.me/api/?results=15';
     final uri = Uri.parse(url);
     final response = await http.get(uri);
     final body = response.body;
