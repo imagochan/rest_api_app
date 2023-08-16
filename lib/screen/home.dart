@@ -13,6 +13,7 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
+  List<dynamic> users = [];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -32,5 +33,9 @@ class _HomeScreenState extends State<HomeScreen> {
     final response = await http.get(uri);
     final body = response.body;
     final json = jsonDecode(body);
+    setState(() {
+      users = json["results"];
+    });
+    print('fetchUsers completed');
   }
 }
