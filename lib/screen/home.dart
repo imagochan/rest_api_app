@@ -44,8 +44,18 @@ class _HomeScreenState extends State<HomeScreen> {
     final response = await http.get(uri);
     final body = response.body;
     final json = jsonDecode(body);
+    final results = json['results'] as List<dynamic>;//because it contains different types
+    final transformed = results.map((e) {
+        return User(
+          cell: e['cell'],
+          email: e['email'],
+          gender: e['gender'],
+          nat: e['nat'],
+          phone: e['phone'],
+        );
+      }).toList();
     setState(() {
-      users = json['results'];
+      users = transformed;
     });
     print('fetchUsers completed');
   }
