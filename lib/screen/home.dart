@@ -1,3 +1,5 @@
+import 'dart:html';
+
 import 'package:flutter/material.dart';
 
 import 'package:http/http.dart' as http; //imported http package from pub.dev
@@ -22,7 +24,11 @@ class _HomeScreenState extends State<HomeScreen> {
     );
   }
 
-  void fetchUsers() {
+  void fetchUsers() async {
     print('fetchUsers called');
+    final url = 'https://randomuser.me/api/?results=10';
+    final uri = Uri.parse(url);
+    final response = await http.get(uri);
+    final body = response.body;
   }
 }
