@@ -1,3 +1,4 @@
+import 'dart:convert';
 import 'dart:html';
 
 import 'package:flutter/material.dart';
@@ -30,5 +31,6 @@ class _HomeScreenState extends State<HomeScreen> {
     final uri = Uri.parse(url);
     final response = await http.get(uri);
     final body = response.body;
+    final json = jsonDecode(body);
   }
 }
