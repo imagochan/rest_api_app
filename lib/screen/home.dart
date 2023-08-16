@@ -26,15 +26,9 @@ class _HomeScreenState extends State<HomeScreen> {
         itemCount: users.length,//cantidad de usuarios en el fetch
         itemBuilder: (context, index){
           final user = users[index];
-          final name = user['name']['first'];
-          final email = user['email'];
-          final imageUrl = user['picture']['thumbnail'];
+          final email = user.email;
           return ListTile(
-            leading: ClipRRect(
-              borderRadius: BorderRadius.circular(100),
-              child: Image.network(imageUrl)),
-            title: Text(name.toString()),
-            subtitle: Text(email),
+            title: Text(email),
           );
         }),
       floatingActionButton: FloatingActionButton(
