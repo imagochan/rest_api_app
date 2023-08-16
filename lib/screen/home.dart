@@ -28,7 +28,9 @@ class _HomeScreenState extends State<HomeScreen> {
           final email = user['email'];
           final imageUrl = user['picture']['thumbnail'];
           return ListTile(
-            leading: Image.network(imageUrl),
+            leading: ClipRRect(
+              borderRadius: BorderRadius.circular(100),
+              child: Image.network(imageUrl)),
             title: Text(name.toString()),
             subtitle: Text(email),
           );
