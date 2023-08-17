@@ -47,7 +47,7 @@ class _HomeScreenState extends State<HomeScreen> {
     );
   }
 
-  void fetchUsers() async {
+  Future<void> fetchUsers() async {
     final users = await UserApi.fetchUsers();
   }
 
