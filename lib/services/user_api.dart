@@ -3,6 +3,7 @@
 
 import 'package:rest_api_app/model/user.dart';
 import 'package:rest_api_app/model/user_dob.dart';
+import 'package:rest_api_app/model/user_location.dart';
 import 'package:rest_api_app/model/user_name.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
@@ -25,6 +26,7 @@ class UserApi {
           last: e['name']['last']);
       final date = e['dob']['date'];
       final dob = UserDob(date: DateTime.parse(date), age: e['dob']['age']);
+      final location = UserLocation(city: e['location']['city'], coordinates: coordinates, country: e['location']['country'], postcode: e['location']['postcode'].toString(), state: e['location']['state'], street: street, timezone: timezone));//some post codes are strings
       return User(
           cell: e['cell'],
           email: e['email'],
@@ -32,7 +34,8 @@ class UserApi {
           nat: e['nat'],
           phone: e['phone'],
           name: name,
-          dob: dob);
+          dob: dob,
+          location: location);
     }).toList();
     return users;
   }
