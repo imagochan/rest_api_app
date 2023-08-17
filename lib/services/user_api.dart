@@ -26,11 +26,12 @@ class UserApi {
           last: e['name']['last']);
       final date = e['dob']['date'];
       final dob = UserDob(date: DateTime.parse(date), age: e['dob']['age']);
-      final coordinates = LocationCoordinates(
+      final coordinates = LocationCoordinate(
           latitude: e['location']['coordinates']['latitude'],
           longitude: e['location']['coordinates']['longitude']);
       final street = LocationStreet(
-          name: e['location']['name'], number: e['location']['number']);
+          name: e['location']['street']['name'],
+          number: e['location']['street']['number']);
       final timezone = LocationTimezone(
           description: e['location']['timezone']['description'],
           offset: e['location']['timezone']['offset']);

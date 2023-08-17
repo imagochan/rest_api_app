@@ -1,12 +1,10 @@
-//import 'package:flutter/material.dart';
-
 class UserLocation {
   final String city;
   final String state;
   final String country;
   final String postcode;
   final LocationStreet street;
-  final LocationCoordinates coordinates;
+  final LocationCoordinate coordinates;
   final LocationTimezone timezone;
 
   UserLocation({
@@ -20,11 +18,11 @@ class UserLocation {
   });
 }
 
-class LocationCoordinates {
+class LocationCoordinate {
   final String longitude;
   final String latitude;
 
-  LocationCoordinates({required this.latitude, required this.longitude});
+  LocationCoordinate({required this.latitude, required this.longitude});
 }
 
 class LocationTimezone {
