@@ -27,8 +27,10 @@ class _HomeScreenState extends State<HomeScreen> {
         itemBuilder: (context, index){
           final user = users[index];
           final email = user.email;
+          final color = user.gender == 'male' ? Colors.lightBlue : Colors.lightGreen;
           return ListTile(
             title: Text(email),
+            tileColor: color,
           );
         }),
       floatingActionButton: FloatingActionButton(
@@ -45,7 +47,7 @@ class _HomeScreenState extends State<HomeScreen> {
     final body = response.body;
     final json = jsonDecode(body);
     final results = json['results'] as List<dynamic>;//because it contains different types
-    final transformed = results.map((e) {
+    final transformed = results.map((e) {//map results list to transformed list using the user model
         return User(
           cell: e['cell'],
           email: e['email'],
