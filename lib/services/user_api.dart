@@ -7,7 +7,7 @@ import 'package:http/http.dart' as http;
 import 'dart:convert';
 
 class UserApi {
-  Future<List<User>> fetchUsers() async {
+  static Future<List<User>> fetchUsers() async {
     print('fetchUsers called');
     final url = 'https://randomuser.me/api/?results=15';
     final uri = Uri.parse(url);
