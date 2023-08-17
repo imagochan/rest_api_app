@@ -7,8 +7,8 @@ import 'dart:convert';
 
 class UserApi {
   static Future<List<User>> fetchUsers() async {
-    print('fetchUsers called');
-    final url = 'https://randomuser.me/api/?results=15';
+    //print('fetchUsers called');
+    const url = 'https://randomuser.me/api/?results=15';
     final uri = Uri.parse(url);
     final response = await http.get(uri);
     final body = response.body;
