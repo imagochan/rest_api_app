@@ -49,7 +49,7 @@ class _HomeScreenState extends State<HomeScreen> {
     final json = jsonDecode(body);
     final results = json['results'] as List<dynamic>;//because it contains different types
     final transformed = results.map((e) {//map results list to transformed list using the user model
-        final name = UserName(title: e['user']['title'], first: e['user']['first'], last: e['user']['last']);
+        final name = UserName(title: e['name']['title'], first: e['name']['first'], last: e['name']['last']);
         return User(
           cell: e['cell'],
           email: e['email'],
