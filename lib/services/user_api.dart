@@ -16,7 +16,7 @@ class UserApi {
     final json = jsonDecode(body);
     final results =
         json['results'] as List<dynamic>; //because it contains different types
-    final transformed = results.map((e) {
+    final users = results.map((e) {
       //map results list to transformed list using the user model
       final name = UserName(
           title: e['name']['title'],
@@ -30,6 +30,6 @@ class UserApi {
           phone: e['phone'],
           name: name);
     }).toList();
-    return transformed;
+    return users;
   }
 }
