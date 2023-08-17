@@ -1,3 +1,5 @@
+import 'package:rest_api_app/model/user_name.dart';
+
 class User {
   final String gender;
   final String email;
@@ -16,16 +18,3 @@ class User {
     });
 }
 
-//mapping
-
-class UserName {
-  final String title;
-  final String first;
-  final String last;
-
-  UserName({
-    required this.title,
-    required this.first,
-    required this.last
-  });
-}

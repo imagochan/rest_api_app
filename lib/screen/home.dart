@@ -4,8 +4,10 @@ import 'dart:convert';
 import 'package:flutter/material.dart';
 
 import 'package:http/http.dart' as http;
+import 'package:rest_api_app/model/user_name.dart';
 
-import '../model/user.dart'; //imported http package from pub.dev
+import '../model/user.dart';
+//imported http package from pub.dev
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -44,7 +46,7 @@ class _HomeScreenState extends State<HomeScreen> {
     );
   }
 
-  void fetchUsers() async {
+  Future<void> fetchUsers() async {
     print('fetchUsers called');
     final url = 'https://randomuser.me/api/?results=15';
     final uri = Uri.parse(url);
