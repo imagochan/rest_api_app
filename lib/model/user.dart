@@ -1,6 +1,9 @@
+import 'dart:ui';
+
 import 'package:rest_api_app/model/user_dob.dart';
 import 'package:rest_api_app/model/user_location.dart';
 import 'package:rest_api_app/model/user_name.dart';
+import 'package:rest_api_app/model/user_picture.dart';
 
 class User {
   final String gender;
@@ -11,6 +14,7 @@ class User {
   final UserName name;
   final UserDob dob;
   final UserLocation location;
+  final UserPicture picture;
 
   User({
     required this.gender,
@@ -21,6 +25,7 @@ class User {
     required this.name,
     required this.dob,
     required this.location,
+    required this.picture,
   });
 
   //factory helps parse data
@@ -48,15 +53,22 @@ class User {
         state: e['location']['state'],
         street: street,
         timezone: timezone); //some post codes are strings
+    final picture = UserPicture(
+      large: e['picture']['large'],
+      medium: e['picture']['medium'],
+      thumbnail: e['picture']['thumbnail'],
+    );
     return User(
-        cell: e['cell'],
-        email: e['email'],
-        gender: e['gender'],
-        nat: e['nat'],
-        phone: e['phone'],
-        name: name,
-        dob: dob,
-        location: location);
+      cell: e['cell'],
+      email: e['email'],
+      gender: e['gender'],
+      nat: e['nat'],
+      phone: e['phone'],
+      name: name,
+      dob: dob,
+      location: location,
+      picture: picture,
+    );
   }
 
   String get fullName {
