@@ -30,6 +30,7 @@ class _HomeScreenState extends State<HomeScreen> {
           final color = user.gender == 'male' ? Colors.lightBlue : Colors.lightGreen;
           return ListTile(
             title: Text(email),
+            subtitle: Text(user.phone),
             tileColor: color,
           );
         }),
