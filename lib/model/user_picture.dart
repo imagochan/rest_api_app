@@ -8,4 +8,12 @@ class UserPicture {
     required this.medium,
     required this.thumbnail,
   });
+
+  factory UserPicture.fromMap(Map<String, dynamic> json) {
+    return UserPicture(
+      large: json['picture']['large'],
+      medium: json['picture']['medium'],
+      thumbnail: json['picture']['thumbnail'],
+    );
+  }
 }

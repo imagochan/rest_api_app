@@ -1,4 +1,4 @@
-import 'dart:ui';
+//import 'dart:ui';
 
 import 'package:rest_api_app/model/user_dob.dart';
 import 'package:rest_api_app/model/user_location.dart';
@@ -53,11 +53,7 @@ class User {
         state: e['location']['state'],
         street: street,
         timezone: timezone); //some post codes are strings
-    final picture = UserPicture(
-      large: e['picture']['large'],
-      medium: e['picture']['medium'],
-      thumbnail: e['picture']['thumbnail'],
-    );
+    final picture = UserPicture.fromMap(e['picture']);
     return User(
       cell: e['cell'],
       email: e['email'],
