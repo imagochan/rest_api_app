@@ -2,6 +2,7 @@
 //import 'dart:html';
 
 import 'package:flutter/material.dart';
+import 'package:rest_api_app/services/user_api.dart';
 
 // import 'package:http/http.dart' as http;
 // import 'package:rest_api_app/model/user_name.dart';
@@ -20,9 +21,9 @@ class _HomeScreenState extends State<HomeScreen> {
   List<User> users = [];
 
   @override
-  void initState(){
+  void initState() {
     super.initState();
-    //fetchUsers();
+    fetchUsers();
   }
 
   @override
@@ -32,18 +33,22 @@ class _HomeScreenState extends State<HomeScreen> {
         title: const Text('Rest API Call'),
       ),
       body: ListView.builder(
-        itemCount: users.length,//cantidad de usuarios en el fetch
-        itemBuilder: (context, index){
-          final user = users[index];
-          
-          //final color = user.gender == 'male' ? Colors.lightBlue : Colors.lightGreen;
-          return ListTile(
-            title: Text(user.name.first),
-            subtitle: Text(user.phone),
-            //tileColor: color,
-          );
-        }),
+          itemCount: users.length, //cantidad de usuarios en el fetch
+          itemBuilder: (context, index) {
+            final user = users[index];
+
+            //final color = user.gender == 'male' ? Colors.lightBlue : Colors.lightGreen;
+            return ListTile(
+              title: Text(user.name.first),
+              subtitle: Text(user.phone),
+              //tileColor: color,
+            );
+          }),
     );
+  }
+
+  void fetchUsers() async {
+    final users = await UserApi.fetchUsers();
   }
 
   // <Future<void> fetchUsers() async {
