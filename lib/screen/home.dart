@@ -34,9 +34,6 @@ class _HomeScreenState extends State<HomeScreen> {
             //tileColor: color,
           );
         }),
-      floatingActionButton: FloatingActionButton(
-        onPressed: fetchUsers, //void calls do not need parentheses ()
-      ),
     );
   }
 
