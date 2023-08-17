@@ -30,7 +30,7 @@ class _HomeScreenState extends State<HomeScreen> {
             final user = users[index];
             return ListTile(
               title: Text(user.fullName),
-              subtitle: Text(user.location.postcode),
+              subtitle: Text(user.location.country),
             );
           }),
     );
