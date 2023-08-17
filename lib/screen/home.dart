@@ -28,12 +28,9 @@ class _HomeScreenState extends State<HomeScreen> {
           itemCount: users.length, //cantidad de usuarios en el fetch
           itemBuilder: (context, index) {
             final user = users[index];
-
-            //final color = user.gender == 'male' ? Colors.lightBlue : Colors.lightGreen;
             return ListTile(
-              title: Text(user.name.first),
+              title: Text(user.fullName),
               subtitle: Text(user.phone),
-              //tileColor: color,
             );
           }),
     );
