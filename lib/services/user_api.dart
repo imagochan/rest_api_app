@@ -23,7 +23,8 @@ class UserApi {
           title: e['name']['title'],
           first: e['name']['first'],
           last: e['name']['last']);
-      final dob = UserDob(date: e['dob']['date'], age: e['dob']['age']);
+      final date = e['dob']['date'];
+      final dob = UserDob(date: DateTime.parse(date), age: e['dob']['age']);
       return User(
           cell: e['cell'],
           email: e['email'],
