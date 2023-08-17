@@ -26,12 +26,12 @@ class _HomeScreenState extends State<HomeScreen> {
         itemCount: users.length,//cantidad de usuarios en el fetch
         itemBuilder: (context, index){
           final user = users[index];
-          final email = user.email;
-          final color = user.gender == 'male' ? Colors.lightBlue : Colors.lightGreen;
+          
+          //final color = user.gender == 'male' ? Colors.lightBlue : Colors.lightGreen;
           return ListTile(
-            title: Text(email),
+            title: Text(user.name.first),
             subtitle: Text(user.phone),
-            tileColor: color,
+            //tileColor: color,
           );
         }),
       floatingActionButton: FloatingActionButton(
