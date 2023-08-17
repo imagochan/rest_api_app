@@ -2,6 +2,7 @@
 //because screens should not have code that deals with logic
 
 import 'package:rest_api_app/model/user.dart';
+import 'package:rest_api_app/model/user_dob.dart';
 import 'package:rest_api_app/model/user_name.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
@@ -22,13 +23,15 @@ class UserApi {
           title: e['name']['title'],
           first: e['name']['first'],
           last: e['name']['last']);
+      final dob = UserDob(date: e['dob']['date'], age: e['dob']['age']);
       return User(
           cell: e['cell'],
           email: e['email'],
           gender: e['gender'],
           nat: e['nat'],
           phone: e['phone'],
-          name: name);
+          name: name,
+          dob: dob);
     }).toList();
     return users;
   }
