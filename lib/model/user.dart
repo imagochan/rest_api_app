@@ -34,8 +34,8 @@ class User {
         title: e['name']['title'],
         first: e['name']['first'],
         last: e['name']['last']);
-    final date = e['dob']['date'];
-    final dob = UserDob(date: DateTime.parse(date), age: e['dob']['age']);
+    //final date = e['dob']['date'];
+    final dob = UserDob.fromMap(e['dob']);
     final location = UserLocation.fromMap(e['location']);
     final picture = UserPicture.fromMap(e['picture']);
     return User(
