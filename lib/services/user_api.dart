@@ -30,9 +30,7 @@ class UserApi {
           phone: e['phone'],
           name: name);
     }).toList();
-    setState(() {
-      users = transformed;
-    });
+    users = transformed;
     print('fetchUsers completed');
   }
 }
