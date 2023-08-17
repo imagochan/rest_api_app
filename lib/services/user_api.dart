@@ -26,7 +26,22 @@ class UserApi {
           last: e['name']['last']);
       final date = e['dob']['date'];
       final dob = UserDob(date: DateTime.parse(date), age: e['dob']['age']);
-      final location = UserLocation(city: e['location']['city'], coordinates: coordinates, country: e['location']['country'], postcode: e['location']['postcode'].toString(), state: e['location']['state'], street: street, timezone: timezone));//some post codes are strings
+      final coordinates = LocationCoordinates(
+          latitude: e['location']['coordinates']['latitude'],
+          longitude: e['location']['coordinates']['longitude']);
+      final street = LocationStreet(
+          name: e['location']['name'], number: e['location']['number']);
+      final timezone = LocationTimezone(
+          description: e['location']['timezone']['description'],
+          offset: e['location']['timezone']['offset']);
+      final location = UserLocation(
+          city: e['location']['city'],
+          coordinates: coordinates,
+          country: e['location']['country'],
+          postcode: e['location']['postcode'].toString(),
+          state: e['location']['state'],
+          street: street,
+          timezone: timezone); //some post codes are strings
       return User(
           cell: e['cell'],
           email: e['email'],

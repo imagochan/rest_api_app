@@ -7,7 +7,7 @@ class UserLocation {
   final String postcode;
   final LocationStreet street;
   final LocationCoordinates coordinates;
-  final LocationTimezoneCoordinate timezone;
+  final LocationTimezone timezone;
 
   UserLocation({
     required this.city,
@@ -27,11 +27,11 @@ class LocationCoordinates {
   LocationCoordinates({required this.latitude, required this.longitude});
 }
 
-class LocationTimezoneCoordinate {
+class LocationTimezone {
   final String offset;
   final String description;
 
-  LocationTimezoneCoordinate({required this.description, required this.offset});
+  LocationTimezone({required this.description, required this.offset});
 }
 
 class LocationStreet {
